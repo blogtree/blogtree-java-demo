@@ -13,7 +13,7 @@ public class ListLoopTest {
     /**
      * 列表初始化
      */
-    public List<Integer> listInit() {
+    public List<Integer> initList() {
         List<Integer> list = new LinkedList<>();
         list.add(1);
         list.add(2);
@@ -34,7 +34,7 @@ public class ListLoopTest {
     @Test
     public void listLoop1() {
         // 遍历
-        List<Integer> list = listInit();
+        List<Integer> list = initList();
         for (int i = 0; i < list.size(); i++) {
             log.info("listLoop1, i={}, item={}", i, list.get(i));
             // 此处修改，生效
@@ -66,7 +66,7 @@ public class ListLoopTest {
     @Test
     public void listLoop2() {
         // 遍历
-        List<Integer> list = listInit();
+        List<Integer> list = initList();
         for (Integer item : list) {
             log.info("listLoop2, item={}", item);
             // 此处修改，不会生效
@@ -100,7 +100,7 @@ public class ListLoopTest {
     @Test
     public void listLoop3() {
         // 遍历
-        List<Integer> list = listInit();
+        List<Integer> list = initList();
         Iterator<Integer> iterator = list.iterator();
         while (iterator.hasNext()) {
             Integer item = iterator.next();
@@ -138,7 +138,7 @@ public class ListLoopTest {
     @Test
     public void listLoop4() {
         // 遍历
-        List<Integer> list = listInit();
+        List<Integer> list = initList();
         list.forEach(item -> {
             log.info("listLoop4, item={}", item);
             // 此处修改，不会生效
