@@ -86,7 +86,7 @@ public class ListLoopTest {
         } catch (Exception e) {
             log.error("listLoop2-del", e);
         }
-
+        log.info("listLoop2-del, list.size={}", list.size());
     }
 
     /**
@@ -125,5 +125,39 @@ public class ListLoopTest {
             iterator.remove();
         }
         log.info("listLoop3-del, list.size={}", list.size());
+    }
+
+    /**
+     * 方式4：forEach遍历
+     * <p>
+     * 优点：代码简洁
+     * 缺点：遍历过程中，没有索引
+     * 修改：不支持
+     * 删除：不支持
+     */
+    @Test
+    public void listLoop4() {
+        // 遍历
+        List<Integer> list = listInit();
+        list.forEach(item -> {
+            log.info("listLoop4, item={}", item);
+            // 此处修改，不会生效
+            item += 10;
+        });
+
+        // 验证修改
+        list.forEach(item -> {
+            log.info("listLoop4, item={}", item);
+        });
+
+        // 验证删除
+        try {
+            list.forEach(item -> {
+                list.remove(item);
+            });
+        } catch (Exception e) {
+            log.error("listLoop4-del", e);
+        }
+        log.info("listLoop4-del, list.size={}", list.size());
     }
 }
