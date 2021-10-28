@@ -6,6 +6,9 @@ import org.junit.Test;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * Java中打印列表
+ */
 @Slf4j
 public class LogListTest {
 
