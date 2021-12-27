@@ -17,6 +17,21 @@
                 background-color: #e2e2e2;
                 padding: 20px;
             }
+
+            .w-article {
+                display: flex;
+                flex-flow: row nowrap;
+            }
+
+            .w-article-left {
+                margin-right: 16px;
+            }
+
+            body .layui-card {
+                min-width: 600px;
+            }
+
+
         </style>
     </head>
     <body>
@@ -24,8 +39,21 @@
 
     </header>
 
-    <article>
-        <#nested>
+    <article class="w-article">
+        <div class="w-article-left">
+            <ul class="layui-nav layui-nav-tree" lay-filter="test">
+                <li class="layui-nav-item"><a href="/">首页</a></li>
+                <li class="layui-nav-item layui-nav-itemed">
+                    <a href="javascript:;">前端调后端</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="/jQuery">jQuery 调用 Spring MVC</a></dd>
+                    </dl>
+                </li>
+            </ul>
+        </div>
+        <div class="w-article-right">
+            <#nested>
+        </div>
     </article>
 
     <footer>

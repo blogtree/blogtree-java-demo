@@ -1,6 +1,12 @@
 <#include "../layout.ftl">
 
 <@layout>
+    <style>
+        .layui-card-body button {
+            margin: 6px auto;
+        }
+    </style>
+
     <div class="layui-card">
         <div class="layui-card-header">jQuery Post 对象</div>
         <div class="layui-card-body">
